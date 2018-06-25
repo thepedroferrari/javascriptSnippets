@@ -1,4 +1,5 @@
 // GlassDoor filter lower Rating Companies
+// Go to https://www.glassdoor.com/Reviews/, make your search criteria and add the following code to the console
 
 const desiredRating = 3.5; // Choose your rating from 0.0 to 5.0
 
