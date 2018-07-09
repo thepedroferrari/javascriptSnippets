@@ -97,3 +97,53 @@
       acc[cur]++
       return acc;
     }, {});
+
+
+
+// DAY 2 Some/Every/Find/findIndex/removing from array
+
+    const people = [
+      { name: 'Wes', year: 1988 },
+      { name: 'Kait', year: 1986 },
+      { name: 'Irv', year: 1970 },
+      { name: 'Lux', year: 2015 }
+    ];
+
+    const comments = [
+      { text: 'Love this!', id: 523423 },
+      { text: 'Super good', id: 823423 },
+      { text: 'You are the best', id: 2039842 },
+      { text: 'Ramen is my fav food ever', id: 123523 },
+      { text: 'Nice Nice Nice!', id: 542328 }
+    ];
+
+    // Some and Every Checks
+    // Array.prototype.some() // is at least one person 19 or older?
+    const thisYear = new Date().getFullYear();
+    console.log('1. Is at least one person 19 or older?', people.some(person => thisYear - person.year >= 19));
+          // Could have also had a one-liner and hard-defined the year, but then it would be outdated the next year :)
+          // The year const would be better inside the log if we would only use it once, but we're using it elsewhere as well.
+    // Array.prototype.every() // is everyone 19 or older?
+    console.log('2. Is everyone 19 or older?', people.every(person => thisYear - person.year >= 19));
+
+    // Array.prototype.find()
+    // Find is like filter, but instead returns just the one you are looking for
+    // find the comment with the ID of 823423
+    console.log('3. Comment with the ID of 823423', comments.find(comment => comment.id === 823423 ));
+
+    // Array.prototype.findIndex()
+    // Find the comment with this ID
+
+    const commentIndex = comments.findIndex(comment => comment.id === 823423 );
+    console.log('4. Find the index of the comment 823423', commentIndex);
+
+    // delete the comment with the ID of 823423
+    console.log('5. Removing comment 823423');
+    // Delete from the comments Array (modify data) comments.splice( comments.findIndex( comment => comment.id === 823423 ), 1); console.table(comments);
+    // Create new array and don't change the original data (usually better to keep original data stored)
+
+    const filteredComments = [
+      ...comments.slice(0, commentIndex),
+      ...comments.slice(commentIndex + 1)
+    ];
+    console.table(filteredComments);
