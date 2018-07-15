@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hold Shift to Check Multiple Checkboxes</title>
+</head>
+<body>
+  <style>
+    html {
+      font-family: sans-serif;
+      background:#ffc600;
+    }
+
+    .inbox {
+      max-width:400px;
+      margin:50px auto;
+      background:white;
+      border-radius:5px;
+      box-shadow:10px 10px 0 rgba(0,0,0,0.1);
+    }
+
+    .item {
+      display:flex;
+      align-items:center;
+      border-bottom: 1px solid #F1F1F1;
+    }
+
+    .item:last-child {
+      border-bottom:0;
+    }
+
+
+    input:checked + label {
+      background:#F9F9F9;
+      text-decoration: line-through;
+    }
+
+    input[type="checkbox"] {
+      margin:20px;
+    }
+
+    label {
+      margin:0;
+      padding:20px;
+      transition:background 0.2s;
+      flex:1;
+      font-family:'helvetica neue', 'Open Sans', 'Arial', 'sans-serif';
+      font-size: 20px;
+      font-weight: 200;
+      border-left: 1px solid #D1E2FF;
+    }
+
+
+  </style>
+  <div class="inbox">
+    <div class="item"><input type="checkbox" id="001"><label for="001">List item 001</label></div>
+    <div class="item"><input type="checkbox" id="002"><label for="002">List item 002</label></div>
+    <div class="item"><input type="checkbox" id="003"><label for="003">List item 003</label></div>
+    <div class="item"><input type="checkbox" id="004"><label for="004">List item 004</label></div>
+    <div class="item"><input type="checkbox" id="005"><label for="005">List item 005</label></div>
+    <div class="item"><input type="checkbox" id="006"><label for="006">List item 006</label></div>
+    <div class="item"><input type="checkbox" id="007"><label for="007">List item 007</label></div>
+    <div class="item"><input type="checkbox" id="008"><label for="008">List item 008</label></div>
+    <div class="item"><input type="checkbox" id="009"><label for="009">List item 009</label></div>
+    <div class="item"><input type="checkbox" id="010"><label for="010">List item 010</label></div>
+    <div class="item"><input type="checkbox" id="011"><label for="011">List item 011</label></div>
+    <div class="item"><input type="checkbox" id="012"><label for="012">List item 012</label></div>
+    <div class="item"><input type="checkbox" id="013"><label for="013">List item 013</label></div>
+    <div class="item"><input type="checkbox" id="014"><label for="014">List item 014</label></div>
+    <div class="item"><input type="checkbox" id="015"><label for="015">List item 015</label></div>
+    <div class="item"><input type="checkbox" id="016"><label for="016">List item 016</label></div>
+    <div class="item"><input type="checkbox" id="017"><label for="017">List item 017</label></div>
+    <div class="item"><input type="checkbox" id="018"><label for="018">List item 018</label></div>
+    <div class="item"><input type="checkbox" id="019"><label for="019">List item 019</label></div>
+    <div class="item"><input type="checkbox" id="020"><label for="020">List item 020</label></div>
+    <div class="item"><input type="checkbox" id="021"><label for="021">List item 021</label></div>
+    <div class="item"><input type="checkbox" id="022"><label for="022">List item 022</label></div>
+    <div class="item"><input type="checkbox" id="023"><label for="023">List item 023</label></div>
+    <div class="item"><input type="checkbox" id="024"><label for="024">List item 024</label></div>
+    <div class="item"><input type="checkbox" id="025"><label for="025">List item 025</label></div>
+    <div class="item"><input type="checkbox" id="026"><label for="026">List item 026</label></div>
+    <div class="item"><input type="checkbox" id="027"><label for="027">List item 027</label></div>
+    <div class="item"><input type="checkbox" id="028"><label for="028">List item 028</label></div>
+    <div class="item"><input type="checkbox" id="029"><label for="029">List item 029</label></div>
+    <div class="item"><input type="checkbox" id="030"><label for="030">List item 030</label></div>
+    <div class="item"><input type="checkbox" id="031"><label for="031">List item 031</label></div>
+    <div class="item"><input type="checkbox" id="032"><label for="032">List item 032</label></div>
+    <div class="item"><input type="checkbox" id="033"><label for="033">List item 033</label></div>
+    <div class="item"><input type="checkbox" id="034"><label for="034">List item 034</label></div>
+    <div class="item"><input type="checkbox" id="035"><label for="035">List item 035</label></div>
+    <div class="item"><input type="checkbox" id="036"><label for="036">List item 036</label></div>
+    <div class="item"><input type="checkbox" id="037"><label for="037">List item 037</label></div>
+    <div class="item"><input type="checkbox" id="038"><label for="038">List item 038</label></div>
+    <div class="item"><input type="checkbox" id="039"><label for="039">List item 039</label></div>
+    <div class="item"><input type="checkbox" id="040"><label for="040">List item 040</label></div>
+    <div class="item"><input type="checkbox" id="041"><label for="041">List item 041</label></div>
+    <div class="item"><input type="checkbox" id="042"><label for="042">List item 042</label></div>
+    <div class="item"><input type="checkbox" id="043"><label for="043">List item 043</label></div>
+    <div class="item"><input type="checkbox" id="044"><label for="044">List item 044</label></div>
+    <div class="item"><input type="checkbox" id="045"><label for="045">List item 045</label></div>
+    <div class="item"><input type="checkbox" id="046"><label for="046">List item 046</label></div>
+    <div class="item"><input type="checkbox" id="047"><label for="047">List item 047</label></div>
+    <div class="item"><input type="checkbox" id="048"><label for="048">List item 048</label></div>
+    <div class="item"><input type="checkbox" id="049"><label for="049">List item 049</label></div>
+    <div class="item"><input type="checkbox" id="050"><label for="050">List item 050</label></div>
+    <div class="item"><input type="checkbox" id="051"><label for="051">List item 051</label></div>
+    <div class="item"><input type="checkbox" id="052"><label for="052">List item 052</label></div>
+    <div class="item"><input type="checkbox" id="053"><label for="053">List item 053</label></div>
+    <div class="item"><input type="checkbox" id="054"><label for="054">List item 054</label></div>
+    <div class="item"><input type="checkbox" id="055"><label for="055">List item 055</label></div>
+    <div class="item"><input type="checkbox" id="056"><label for="056">List item 056</label></div>
+    <div class="item"><input type="checkbox" id="057"><label for="057">List item 057</label></div>
+    <div class="item"><input type="checkbox" id="058"><label for="058">List item 058</label></div>
+    <div class="item"><input type="checkbox" id="059"><label for="059">List item 059</label></div>
+    <div class="item"><input type="checkbox" id="060"><label for="060">List item 060</label></div>
+    <div class="item"><input type="checkbox" id="061"><label for="061">List item 061</label></div>
+    <div class="item"><input type="checkbox" id="062"><label for="062">List item 062</label></div>
+    <div class="item"><input type="checkbox" id="063"><label for="063">List item 063</label></div>
+    <div class="item"><input type="checkbox" id="064"><label for="064">List item 064</label></div>
+    <div class="item"><input type="checkbox" id="065"><label for="065">List item 065</label></div>
+    <div class="item"><input type="checkbox" id="066"><label for="066">List item 066</label></div>
+    <div class="item"><input type="checkbox" id="067"><label for="067">List item 067</label></div>
+    <div class="item"><input type="checkbox" id="068"><label for="068">List item 068</label></div>
+    <div class="item"><input type="checkbox" id="069"><label for="069">List item 069</label></div>
+    <div class="item"><input type="checkbox" id="070"><label for="070">List item 070</label></div>
+    <div class="item"><input type="checkbox" id="071"><label for="071">List item 071</label></div>
+    <div class="item"><input type="checkbox" id="072"><label for="072">List item 072</label></div>
+    <div class="item"><input type="checkbox" id="073"><label for="073">List item 073</label></div>
+    <div class="item"><input type="checkbox" id="074"><label for="074">List item 074</label></div>
+    <div class="item"><input type="checkbox" id="075"><label for="075">List item 075</label></div>
+    <div class="item"><input type="checkbox" id="076"><label for="076">List item 076</label></div>
+    <div class="item"><input type="checkbox" id="077"><label for="077">List item 077</label></div>
+    <div class="item"><input type="checkbox" id="078"><label for="078">List item 078</label></div>
+    <div class="item"><input type="checkbox" id="079"><label for="079">List item 079</label></div>
+    <div class="item"><input type="checkbox" id="080"><label for="080">List item 080</label></div>
+    <div class="item"><input type="checkbox" id="081"><label for="081">List item 081</label></div>
+    <div class="item"><input type="checkbox" id="082"><label for="082">List item 082</label></div>
+    <div class="item"><input type="checkbox" id="083"><label for="083">List item 083</label></div>
+    <div class="item"><input type="checkbox" id="084"><label for="084">List item 084</label></div>
+    <div class="item"><input type="checkbox" id="085"><label for="085">List item 085</label></div>
+    <div class="item"><input type="checkbox" id="086"><label for="086">List item 086</label></div>
+    <div class="item"><input type="checkbox" id="087"><label for="087">List item 087</label></div>
+    <div class="item"><input type="checkbox" id="088"><label for="088">List item 088</label></div>
+    <div class="item"><input type="checkbox" id="089"><label for="089">List item 089</label></div>
+    <div class="item"><input type="checkbox" id="090"><label for="090">List item 090</label></div>
+    <div class="item"><input type="checkbox" id="091"><label for="091">List item 091</label></div>
+    <div class="item"><input type="checkbox" id="092"><label for="092">List item 092</label></div>
+    <div class="item"><input type="checkbox" id="093"><label for="093">List item 093</label></div>
+    <div class="item"><input type="checkbox" id="094"><label for="094">List item 094</label></div>
+    <div class="item"><input type="checkbox" id="095"><label for="095">List item 095</label></div>
+    <div class="item"><input type="checkbox" id="096"><label for="096">List item 096</label></div>
+    <div class="item"><input type="checkbox" id="097"><label for="097">List item 097</label></div>
+    <div class="item"><input type="checkbox" id="098"><label for="098">List item 098</label></div>
+    <div class="item"><input type="checkbox" id="099"><label for="099">List item 099</label></div>
+    <div class="item"><input type="checkbox" id="100"><label for="100">List item 100</label></div>
+    <div class="item"><input type="checkbox" id="101"><label for="101">List item 101</label></div>
+    <div class="item"><input type="checkbox" id="102"><label for="102">List item 102</label></div>
+    <div class="item"><input type="checkbox" id="103"><label for="103">List item 103</label></div>
+    <div class="item"><input type="checkbox" id="104"><label for="104">List item 104</label></div>
+    <div class="item"><input type="checkbox" id="105"><label for="105">List item 105</label></div>
+    <div class="item"><input type="checkbox" id="106"><label for="106">List item 106</label></div>
+    <div class="item"><input type="checkbox" id="107"><label for="107">List item 107</label></div>
+    <div class="item"><input type="checkbox" id="108"><label for="108">List item 108</label></div>
+    <div class="item"><input type="checkbox" id="109"><label for="109">List item 109</label></div>
+    <div class="item"><input type="checkbox" id="110"><label for="110">List item 110</label></div>
+    <div class="item"><input type="checkbox" id="111"><label for="111">List item 111</label></div>
+    <div class="item"><input type="checkbox" id="112"><label for="112">List item 112</label></div>
+    <div class="item"><input type="checkbox" id="113"><label for="113">List item 113</label></div>
+    <div class="item"><input type="checkbox" id="114"><label for="114">List item 114</label></div>
+    <div class="item"><input type="checkbox" id="115"><label for="115">List item 115</label></div>
+    <div class="item"><input type="checkbox" id="116"><label for="116">List item 116</label></div>
+    <div class="item"><input type="checkbox" id="117"><label for="117">List item 117</label></div>
+    <div class="item"><input type="checkbox" id="118"><label for="118">List item 118</label></div>
+    <div class="item"><input type="checkbox" id="119"><label for="119">List item 119</label></div>
+    <div class="item"><input type="checkbox" id="120"><label for="120">List item 120</label></div>
+    <div class="item"><input type="checkbox" id="121"><label for="121">List item 121</label></div>
+    <div class="item"><input type="checkbox" id="122"><label for="122">List item 122</label></div>
+    <div class="item"><input type="checkbox" id="123"><label for="123">List item 123</label></div>
+    <div class="item"><input type="checkbox" id="124"><label for="124">List item 124</label></div>
+    <div class="item"><input type="checkbox" id="125"><label for="125">List item 125</label></div>
+    <div class="item"><input type="checkbox" id="126"><label for="126">List item 126</label></div>
+    <div class="item"><input type="checkbox" id="127"><label for="127">List item 127</label></div>
+    <div class="item"><input type="checkbox" id="128"><label for="128">List item 128</label></div>
+    <div class="item"><input type="checkbox" id="129"><label for="129">List item 129</label></div>
+    <div class="item"><input type="checkbox" id="130"><label for="130">List item 130</label></div>
+    <div class="item"><input type="checkbox" id="131"><label for="131">List item 131</label></div>
+    <div class="item"><input type="checkbox" id="132"><label for="132">List item 132</label></div>
+    <div class="item"><input type="checkbox" id="133"><label for="133">List item 133</label></div>
+    <div class="item"><input type="checkbox" id="134"><label for="134">List item 134</label></div>
+    <div class="item"><input type="checkbox" id="135"><label for="135">List item 135</label></div>
+    <div class="item"><input type="checkbox" id="136"><label for="136">List item 136</label></div>
+    <div class="item"><input type="checkbox" id="137"><label for="137">List item 137</label></div>
+    <div class="item"><input type="checkbox" id="138"><label for="138">List item 138</label></div>
+    <div class="item"><input type="checkbox" id="139"><label for="139">List item 139</label></div>
+    <div class="item"><input type="checkbox" id="140"><label for="140">List item 140</label></div>
+    <div class="item"><input type="checkbox" id="141"><label for="141">List item 141</label></div>
+    <div class="item"><input type="checkbox" id="142"><label for="142">List item 142</label></div>
+    <div class="item"><input type="checkbox" id="143"><label for="143">List item 143</label></div>
+    <div class="item"><input type="checkbox" id="144"><label for="144">List item 144</label></div>
+    <div class="item"><input type="checkbox" id="145"><label for="145">List item 145</label></div>
+    <div class="item"><input type="checkbox" id="146"><label for="146">List item 146</label></div>
+    <div class="item"><input type="checkbox" id="147"><label for="147">List item 147</label></div>
+    <div class="item"><input type="checkbox" id="148"><label for="148">List item 148</label></div>
+    <div class="item"><input type="checkbox" id="149"><label for="149">List item 149</label></div>
+    <div class="item"><input type="checkbox" id="150"><label for="150">List item 150</label></div>
+    <div class="item"><input type="checkbox" id="151"><label for="151">List item 151</label></div>
+    <div class="item"><input type="checkbox" id="152"><label for="152">List item 152</label></div>
+    <div class="item"><input type="checkbox" id="153"><label for="153">List item 153</label></div>
+    <div class="item"><input type="checkbox" id="154"><label for="154">List item 154</label></div>
+    <div class="item"><input type="checkbox" id="155"><label for="155">List item 155</label></div>
+    <div class="item"><input type="checkbox" id="156"><label for="156">List item 156</label></div>
+    <div class="item"><input type="checkbox" id="157"><label for="157">List item 157</label></div>
+    <div class="item"><input type="checkbox" id="158"><label for="158">List item 158</label></div>
+    <div class="item"><input type="checkbox" id="159"><label for="159">List item 159</label></div>
+    <div class="item"><input type="checkbox" id="160"><label for="160">List item 160</label></div>
+    <div class="item"><input type="checkbox" id="161"><label for="161">List item 161</label></div>
+    <div class="item"><input type="checkbox" id="162"><label for="162">List item 162</label></div>
+    <div class="item"><input type="checkbox" id="163"><label for="163">List item 163</label></div>
+    <div class="item"><input type="checkbox" id="164"><label for="164">List item 164</label></div>
+    <div class="item"><input type="checkbox" id="165"><label for="165">List item 165</label></div>
+    <div class="item"><input type="checkbox" id="166"><label for="166">List item 166</label></div>
+    <div class="item"><input type="checkbox" id="167"><label for="167">List item 167</label></div>
+    <div class="item"><input type="checkbox" id="168"><label for="168">List item 168</label></div>
+    <div class="item"><input type="checkbox" id="169"><label for="169">List item 169</label></div>
+    <div class="item"><input type="checkbox" id="170"><label for="170">List item 170</label></div>
+    <div class="item"><input type="checkbox" id="171"><label for="171">List item 171</label></div>
+    <div class="item"><input type="checkbox" id="172"><label for="172">List item 172</label></div>
+    <div class="item"><input type="checkbox" id="173"><label for="173">List item 173</label></div>
+    <div class="item"><input type="checkbox" id="174"><label for="174">List item 174</label></div>
+    <div class="item"><input type="checkbox" id="175"><label for="175">List item 175</label></div>
+    <div class="item"><input type="checkbox" id="176"><label for="176">List item 176</label></div>
+    <div class="item"><input type="checkbox" id="177"><label for="177">List item 177</label></div>
+    <div class="item"><input type="checkbox" id="178"><label for="178">List item 178</label></div>
+    <div class="item"><input type="checkbox" id="179"><label for="179">List item 179</label></div>
+    <div class="item"><input type="checkbox" id="180"><label for="180">List item 180</label></div>
+    <div class="item"><input type="checkbox" id="181"><label for="181">List item 181</label></div>
+    <div class="item"><input type="checkbox" id="182"><label for="182">List item 182</label></div>
+    <div class="item"><input type="checkbox" id="183"><label for="183">List item 183</label></div>
+    <div class="item"><input type="checkbox" id="184"><label for="184">List item 184</label></div>
+    <div class="item"><input type="checkbox" id="185"><label for="185">List item 185</label></div>
+    <div class="item"><input type="checkbox" id="186"><label for="186">List item 186</label></div>
+    <div class="item"><input type="checkbox" id="187"><label for="187">List item 187</label></div>
+    <div class="item"><input type="checkbox" id="188"><label for="188">List item 188</label></div>
+    <div class="item"><input type="checkbox" id="189"><label for="189">List item 189</label></div>
+    <div class="item"><input type="checkbox" id="190"><label for="190">List item 190</label></div>
+    <div class="item"><input type="checkbox" id="191"><label for="191">List item 191</label></div>
+    <div class="item"><input type="checkbox" id="192"><label for="192">List item 192</label></div>
+    <div class="item"><input type="checkbox" id="193"><label for="193">List item 193</label></div>
+    <div class="item"><input type="checkbox" id="194"><label for="194">List item 194</label></div>
+    <div class="item"><input type="checkbox" id="195"><label for="195">List item 195</label></div>
+    <div class="item"><input type="checkbox" id="196"><label for="196">List item 196</label></div>
+    <div class="item"><input type="checkbox" id="197"><label for="197">List item 197</label></div>
+    <div class="item"><input type="checkbox" id="198"><label for="198">List item 198</label></div>
+    <div class="item"><input type="checkbox" id="199"><label for="199">List item 199</label></div>
+    <div class="item"><input type="checkbox" id="200"><label for="200">List item 200</label></div>
+  </div>
+<script>
+  // Get all checkboxes of the container we want
+  const checkboxes = document.querySelectorAll('.item input[type="checkbox"]');
+  // declare variable for later assignment
+  let lastChecked;
+
+  // Create function that handles the click on the checkbox
+  function handleClick(e) {
+
+    // Create flag that will define if the checkbox is between the first or last one
+    let amidst = false;
+
+    // Check if the shift key has been pressed, and also if the current checkbox is being checked
+    if (e.shiftKey && this.checked) {
+
+      // Loop between ALL checkboxes in the page
+      checkboxes.forEach(checkbox => {
+
+        // Invert the flag for the checkbox you are clicking and also for the last one you clicked
+        if (checkbox === this || checkbox === lastChecked) {
+          amidst = !amidst;
+        }
+
+        // Here we will check for the flag on/off. If the flag is on, we are checking the checkbox. As soon as we reach the last one, the flag will be inversed and we will stop checking the checkboxes
+        if (amidst) {
+          checkbox.checked = true;
+        }
+      });
+    }
+
+    // we are adding the current clicked checkbox to be the last one that was checked, so the next click will have this variable in the memory
+    lastChecked = this;
+  }
+
+  // Add an event listener for every click on the checkboxes
+  checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleClick));
+
+</script>
+</body>
+</html>
