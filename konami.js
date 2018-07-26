@@ -1,4 +1,5 @@
 // Write my name to change all images to cat gifs
+
 const pressed = [];
 const secretCode = 'Pedro';
 window.addEventListener('keyup', (e) => {
